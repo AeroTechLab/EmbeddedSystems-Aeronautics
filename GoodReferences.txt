@@ -1,1 +1,11 @@
+Title: the rapidly dwindling sanity of valve programmers as expressed through code comments
+Link: https://www.youtube.com/watch?v=k238XpMMn38
+Description: This is a video showing how to compile C only using a rock and two clips
+Interesting point: It is really funny and shows that even real products has its problem. It shows that it is important to comment/document the code. 
+Who added: Henrique Borges Garcia
 
+Title: Essentials: Pointer Power! - Computerphile
+Link: https://www.youtube.com/watch?v=t5NszbIerYc
+Description: Video showing how pointers work
+Interesting point: It is very common to program a software for embedded systems in C and C++. Having a good understanding of how pointers work is reeeeally important!
+Who added: Henrique Borges Garcia
