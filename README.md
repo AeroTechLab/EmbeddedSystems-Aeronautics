@@ -1,4 +1,4 @@
-# EmbeddedSystems Aeronautics
+# EmbeddedSystems Aeronautics - 2021.2
 Main Embedded Systems class repository for Aeronautics Engineering at EESC - USP
 
 ## Teachers
