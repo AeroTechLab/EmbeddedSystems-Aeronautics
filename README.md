@@ -13,8 +13,28 @@ Main Embedded Systems class repository for Aeronautics Engineering at EESC - USP
 ## Current
 - Embedded Systems for Aeronautics - 2021.2 (branch 2021.2)
 
+
+### Delivery dates
+
+Click at the deliverable name to take a look at the deliverable explanation
+
+Deliverable | Date
+------------|-----
+Project's repository Creation and addition to this repository as submodule|Month DD, 2021
+Project's architecture (drawing and explanation)|Month DD, 2021
+Runtime and Compilation dependencies |Month DD, 2021
+Proof of Concept|Month DD, 2021
+First prototype|Month DD, 2021
+First Video explanation|Month DD, 2021
+**Final delivery**|Month DD, 2021
+
+
+
 ## Concluded
+
 - None
+
+_Actually, this class was carried out **several** times, but this git based format started on the second semester of 2021._
 
 # How it works
 
