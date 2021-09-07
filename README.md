@@ -1,11 +1,11 @@
 # EmbeddedSystems Aeronautics - 2021.2
 Main Embedded Systems class repository for Aeronautics Engineering at EESC - USP
 
-## Teachers
-- Dr. Glauco Caurin
-- Dr. Daniel Magalhäes
+## Lecturers
+- Glauco Caurin
+- Daniel Magalhäes
 
-## Teacher assistant
+## Course Assistant (CA)
 - Henrique Garcia
 
 # Classes
@@ -20,13 +20,13 @@ Click at the deliverable name to take a look at the deliverable explanation
 
 Deliverable | Date
 ------------|-----
-Project's repository Creation and addition to this repository as submodule|Month DD, 2021
-Project's architecture (drawing and explanation)|Month DD, 2021
-Runtime and Compilation dependencies |Month DD, 2021
-Proof of Concept|Month DD, 2021
-First prototype|Month DD, 2021
-First Video explanation|Month DD, 2021
-**Final delivery**|Month DD, 2021
+Project's repository Creation and addition to this repository as submodule|September 13, 2021
+Project's architecture (drawing and explanation)|September 20, 2021
+Runtime and Compilation dependencies |October 04, 2021
+Proof of Concept|October 25, 2021
+First prototype|November 01, 2021
+First Video explanation|November 08, 2021
+**Final delivery** Freezing the repo|November 22, 2021
 
 
 
