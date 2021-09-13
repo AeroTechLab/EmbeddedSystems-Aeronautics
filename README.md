@@ -1,6 +1,9 @@
 # EmbeddedSystems Aeronautics - 2021.2
 Main Embedded Systems class repository for Aeronautics Engineering at EESC - USP
 
+PULL REQUEST 13/09 14:58
+
+
 ## Lecturers
 - Glauco Caurin
 - Daniel Magalhäes
