@@ -29,7 +29,7 @@ This project is about the infrastructure of a television-like gameshow where the
 
 ### Example of Architecture description
 
-![Image of Architecture]( https://github.com/gcaurin/EmbeddedSystems-Aeronautics/blob/2021.2/projects-descriptions/Arquitetura.jpg)
+![Image of Architecture](https://github.com/gcaurin/EmbeddedSystems-Aeronautics/blob/2021.2/projects-descriptions/Arquitetura.jpg)
 - This version was presented on the September 27th to serve as reference for the student projects
 - Up to now,  we have the following IO requirements for the GPIO (still need to verify availability on the Viola Base Board
   1. 3 Output  - push buttons
