@@ -26,3 +26,12 @@ This project is about the infrastructure of a television-like gameshow where the
 - The delay time between the "GO!" and the button press for each participant/group
 - Visual indication for each of the optionals above
 - Save interesting data (like the time delay for each participant/team) to a SD card, so there is no need to ever connect a computer to the embedded system.
+
+### Example of Architecture description
+
+![Image of Architecture]( https://github.com/gcaurin/EmbeddedSystems-Aeronautics/blob/2021.2/projects-descriptions/Arquitetura.jpg)
+- This version was presented on the September 27th to serve as reference for the student projects
+- Up to now,  we have the following IO requirements for the GPIO (still need to verify availability on the Viola Base Board
+  1. 3 Output  - push buttons
+  2. 3 Input  - leds / sign lamps
+  3. One display output connection
