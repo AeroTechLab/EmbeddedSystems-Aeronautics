@@ -24,7 +24,6 @@ void Player_2_Score_State(void); //function representing the state after Push-Bu
 void Starting_State(void)
 {
   char ReadButton;
-  printf("- Welcome - Lets Play ?   \n");
   printf("- Power On  \n");    //needs to be replaced by an GPIO output Power Led ON
   printf("- Play Off  \n");    //needs to be replaced by an GPIO output Play Led OFF
   printf("- Player 1 Score Off  \n"); //needs to be replaced by an GPIO output Player 1 Led OFF
@@ -47,6 +46,13 @@ void Starting_State(void)
 void Game_Running_State(void)
 {
   char ReadButton;
+  printf("- Game On   \n");
+  printf("- Listen to the question and Press the Button if you know the answer \n");
+  printf("- Power On  \n");    //needs to be replaced by an GPIO output Power Led ON
+  printf("- Play On  \n");    //needs to be replaced by an GPIO output Play Led OFF
+  printf("- Player 1 Score Off  \n"); //needs to be replaced by an GPIO output Player 1 Led OFF
+  printf("- Player 2 Score Off  \n"); //needs to be replaced by an GPIO output Player 2 Led OFF
+
   //reads the pressed key on th keyboard - prototype
   //needs to be replaced by an GPIO input
   //fflush(stdin); //cleans keyboard buffer
@@ -110,7 +116,7 @@ int main(int argc, char *argv[])
   PointerToFunction = Starting_State; //points to the initial state. 
                                       //Never forget to inform the initial state 
                                       //(otherwise, in this specific case, fatal error may occur/ hard fault).
-
+  printf("\n- Welcome - Ready - Lets Play ? - Press P to start \n");
   while(1)
   {
     (*PointerToFunction)();  //calls a function pointed out by the pointer to function (thus, calls the current state)
