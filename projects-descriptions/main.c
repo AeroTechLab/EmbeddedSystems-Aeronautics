@@ -8,7 +8,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <stdio_ext.h>
 
 //Global variables:
 void (*PointerToFunction)(); // Pointer to the functions (states) of the state machine. 
@@ -32,7 +32,8 @@ void Starting_State(void)
 
   //reads the keyboard - prototype
   //needs to be replaced by an GPIO input
-  fflush(stdin); //cleans keyboard buffer
+  //fflush(stdin); //cleans keyboard buffer
+  __fpurge(stdin);
   ReadButton = getchar();
   //scanf("%c", &ReadButton);
 
@@ -48,10 +49,11 @@ void Game_Running_State(void)
   char ReadButton;
   //reads the pressed key on th keyboard - prototype
   //needs to be replaced by an GPIO input
-  fflush(stdin); //cleans keyboard buffer
+  //fflush(stdin); //cleans keyboard buffer
+  __fpurge(stdin);
   ReadButton = getchar();
   //scanf("%c", &ReadButton);
-  printf("You entered %c : -", ReadButton);
+  printf("You entered %c  \n", ReadButton);
 
   if (ReadButton == 'b')
     PointerToFunction = Player_1_Score_State;
@@ -67,15 +69,17 @@ void Player_1_Score_State(void)
 {
   char ReadButton;
   //reads the pressed key on th keyboard - prototype
-  fflush(stdin); //cleans keyboard buffer
+  //fflush(stdin); //cleans keyboard buffer
+  __fpurge(stdin);
   ReadButton = getchar();
   //scanf("%c", &ReadButton);
+  printf("You entered %c  \n", ReadButton);
 
   if (ReadButton == 'c')
     PointerToFunction = Player_2_Score_State;
   else
   {
-    printf("\n\n- Expected char: c. Readen char: %c. Back to the initial state\n\n",ReadButton);
+    printf("\n- Expected char: c. Readen char: %c. Back to the initial state \n",ReadButton);
     PointerToFunction = Starting_State;
   } 
 }
@@ -85,12 +89,15 @@ void Player_2_Score_State(void)
 {
   char ReadButton;
   //reads the pressed key on th keyboard - prototype
-  fflush(stdin); //cleans keyboard buffer
+  //fflush(stdin); //cleans keyboard buffer
+  __fpurge(stdin);
   ReadButton = getchar();
   //scanf("%c", &ReadButton);
+  
+  printf("You entered %c  \n", ReadButton);
 
   if (ReadButton != 'd')
-    printf("\n\n- Expected char: d. Readen char: %c. Back to the initial state\n\n",ReadButton);
+    printf("\n- Expected char: d. Readen char: %c. Back to the initial state\n",ReadButton);
   else
     printf("OK\n\n"); //the sequence of input letter is ok. Rights "OK" in the screen and goes back to initial state
 
