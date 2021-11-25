@@ -27,7 +27,7 @@ This project is about the infrastructure of a television-like gameshow where the
 - Visual indication for each of the optionals above
 - Save interesting data (like the time delay for each participant/team) to a SD card, so there is no need to ever connect a computer to the embedded system.
 
-### Example of Architecture description
+### Architecture description
 
 ![Image of Architecture](https://github.com/gcaurin/EmbeddedSystems-Aeronautics/blob/2021.2/projects-descriptions/Arquitetura.jpg)
 - This version was presented on the September 27th to serve as reference for the student projects
@@ -35,3 +35,9 @@ This project is about the infrastructure of a television-like gameshow where the
   1. 3 Output  - push buttons
   2. 3 Input  - leds / sign lamps
   3. One display output connection
+
+### State Machine for the Software implementation of the Game
+![Image of Architecture](https://github.com/gcaurin/EmbeddedSystems-Aeronautics/blob/2021.2/projects-descriptions/MaquinaDeEstados.jpg)
+- This version was presented on the November 20th to serve as reference for the student projects
+- main.c provides the corresponding prototype C language implementation 
+- 
