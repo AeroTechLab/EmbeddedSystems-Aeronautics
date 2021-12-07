@@ -17,12 +17,22 @@
 #include <poll.h>
 
 
+// -------------------------------------------------------------|
+// ---------------------- Debounce parameters ------------------|
+#define DEBOUNCE_TIME       0.3
+#define SAMPLE_FREQUENCY    10
+#define MAXIMUM         (DEBOUNCE_TIME * SAMPLE_FREQUENCY)
+// ------------------------------------------ ------------------|
+
 //Global variables:
 void (*PointerToFunction)(); // Pointer to the functions (states) of the state machine. 
                              // It points to the function that must run on the state machine
 int Player1_Points;          // Collects the points from Player 1 for display
 int Player2_Points;          // Collects the points from Player 2 for display
 int fd_start_button;         // start_button_file_descriptor
+
+// debounce integrator
+unsigned int integrator;     // Will range from 0 to the specified MAXIMUM
 
 struct pollfd poll_gpio;
 
@@ -42,6 +52,11 @@ void Starting_State(void)
   // char ReadButton;
  
   char value;
+  int n_value;
+  // These are the variables used to debounce 
+  unsigned int input;       // 0 or 1 depending on the input signal value
+  unsigned int output;      // Cleaned-up version of the input signal 
+
   printf("Ready? Lets Play? Press the Start Button to play. You are at Starting_State \n"); 
   printf("*******************************************************************\n");
   printf("*** Player 1 ******   %d   points **********************************\n", Player1_Points);
@@ -72,8 +87,41 @@ void Starting_State(void)
   //__fpurge(stdin);
   //ReadButton = getchar();
   //scanf("%c", &ReadButton);
-  
-  if (value == '0')
+  n_value = (int)value;
+  if(n_value == 0)
+    input = 1;
+  else
+    input = 0;
+  // 
+  // Start debounce code
+  //
+  // Step 1: Update the integrator based on the input signal.  Note that the
+  // integrator follows the input, decreasing or increasing towards the limits as
+  // determined by the input state (0 or 1). 
+ 
+  if (input == 0)
+    {
+    if (integrator > 0)
+      integrator--;
+    }
+  else if (integrator < MAXIMUM)
+    integrator++;
+ 
+  // Step 2: Update the output state based on the integrator.  Note that the
+  // output will only change states if the integrator has reached a limit, either
+  // 0 or MAXIMUM. 
+ 
+  if (integrator == 0)
+    output = 0;
+  else if (integrator >= MAXIMUM)
+    {
+    output = 1;
+    integrator = MAXIMUM;  /* defensive code if integrator got corrupted */
+    }
+ 
+
+  // End debounce code
+  if (output == 1)
     PointerToFunction = Game_Running_State;
   else 
     printf("\n- Press the Start Button to play. You are at Starting_State \n"); 
@@ -184,11 +232,13 @@ void TurnGoSignOFF(void)
 
 int main(int argc, char *argv[])
 {
+  Player1_Points = 0;
+  Player2_Points = 0;
+  integrator = 0;
   PointerToFunction = Starting_State; //points to the initial state. 
                                       //Never forget to inform the initial state 
                                       //(otherwise, in this specific case, fatal error may occur/ hard fault).
-  Player1_Points = 0;
-  Player2_Points = 0;
+
   int fd;
 
 
