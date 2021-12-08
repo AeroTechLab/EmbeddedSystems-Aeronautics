@@ -57,7 +57,9 @@ void Starting_State(void)
   unsigned int input;       // 0 or 1 depending on the input signal value
   unsigned int output;      // Cleaned-up version of the input signal 
 
-  printf("Ready? Lets Play? Press the Start Button to play. You are at Starting_State \n"); 
+  printf("Are you Ready? \n");
+  printf("Lets Play? \n");
+  printf("Press the Start Button to play. You are at Starting_State \n"); 
   printf("*******************************************************************\n");
   printf("*** Player 1 ******   %d   points **********************************\n", Player1_Points);
   printf("*** Player 2 ******   %d   points **********************************\n", Player2_Points);
@@ -87,11 +89,15 @@ void Starting_State(void)
   //__fpurge(stdin);
   //ReadButton = getchar();
   //scanf("%c", &ReadButton);
-  n_value = (int)value;
-  if(n_value == 0)
-    input = 1;
-  else
-    input = 0;
+  
+  // Invert input 0 -> 1 and 1 -> 0
+  //n_value = (int)value;
+  // if(n_value == 0)
+  //   input = 1;
+  // else
+  //   input = 0;
+
+  input = (int)value;
   // 
   // Start debounce code
   //
@@ -122,9 +128,14 @@ void Starting_State(void)
 
   // End debounce code
   if (output == 1)
+    {
+    printf("Integrator = %d\n", integrator);
+    printf("***************************\n");
     PointerToFunction = Game_Running_State;
+    }
   else 
-    printf("\n- Press the Start Button to play. You are at Starting_State \n"); 
+    printf("\n- Press the Start Button to play. You are at Starting_State \n");
+    printf("\n- ********************************************************* \n"); 
 }
 
 //Switch to the next state if key pressed is 'b'. Otherwise, return to initial state (waits for letter 'p')
@@ -132,7 +143,7 @@ void Game_Running_State(void)
 {
   int fd;
   char ReadButton;
-  printf("                       Game On   \n");
+  printf("        The Game is On   \n");
   printf("- Listen to the question and Press the Button if you know the answer \n");
   printf("- Power On  \n");    
   // Turn GO-Sign ON
