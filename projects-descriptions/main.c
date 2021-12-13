@@ -61,8 +61,8 @@ void Starting_State(void)
   printf("Lets Play? \n");
   printf("Press the Start Button to play. You are at Starting_State \n"); 
   printf("*******************************************************************\n");
-  printf("*** Player 1 ******   %d   points **********************************\n", Player1_Points);
-  printf("*** Player 2 ******   %d   points **********************************\n", Player2_Points);
+  printf("*** Player 1 ******   %d   Points **********************************\n", Player1_Points);
+  printf("*** Player 2 ******   %d   Points **********************************\n", Player2_Points);
   printf("*******************************************************************\n\n");
   printf("- Power On  \n");    //needs to be replaced by an GPIO output Power Led ON
   printf("- Play Off  \n");    //needs to be replaced by an GPIO output Play Led OFF
