@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "type_traits": "c",
+        "unistd.h": "c",
+        "fcntl.h": "c"
+    }
+}
