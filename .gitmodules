@@ -1,0 +1,3 @@
+[submodule "breguet"]
+	path = breguet
+	url = https://github.com/leocelente/breguet
